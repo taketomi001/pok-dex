@@ -9,7 +9,9 @@ const pokemonList = [
   },
 ];
 
-export default function PokemonCard() {
+export default function PokemonCard(props) {
+  console.log(props);
+  
   return pokemonList.map((pokemon) => (
     <figure>
       {pokemon.imgSrc ? <img src={pokemon.imgSrc} /> : <p>???</p>}
