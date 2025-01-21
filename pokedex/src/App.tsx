@@ -12,11 +12,13 @@ const pokemonList = [
   },
 ];
 
-
 function App() {
   return (
     <section>
-     <div><PokemonCard pokemon = {pokemonList[0]} /></div>
+      <div>
+      {pokemonList.map((pokemon, index) => (
+        <PokemonCard key={index} name={pokemon.name} imgSrc={pokemon.imgSrc} />))}
+      </div>
     </section>
   );
 }
