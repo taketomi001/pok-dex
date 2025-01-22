@@ -11,7 +11,11 @@ interface NavBarProps {
 export default function NavBar({ setPokemonIndex, pokemonList }: NavBarProps) {
   const handlePokemonClick = (index: number) => {
     setPokemonIndex(index);
+    const selectPikachu = pokemonList[index];
     // console.log(index);
+    if (selectPikachu.name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
   };
   return (
     <nav>
