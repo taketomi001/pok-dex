@@ -1,10 +1,11 @@
-import "../App"
-interface pokemon{
+import "../App";
+interface pokemon {
   name: string;
-  imgSrc ? : string;
+  imgSrc?: string;
 }
 
-export default function PokemonCard({imgSrc, name}:pokemon) {
+
+export default function PokemonCard({ imgSrc, name }: pokemon) {
   return (
     <>
       <figure>
