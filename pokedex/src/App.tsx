@@ -31,41 +31,25 @@ const pokemonList = [
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
-  const nextPokemon = () => {
-    if (pokemonIndex < pokemonList.length - 1) {
-      setPokemonIndex(pokemonIndex + 1);
-    }
+  const handlePokemonClick = (index) => {
+    setPokemonIndex(index);
+    // console.log(index);
   };
-
-  const prevPokemon = () => {
-    if (pokemonIndex > 0) {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
-
-  const pokemon = pokemonList[pokemonIndex];
 
   return (
-    <section>
-      <div>
-        <PokemonCard
-          // key={pokemon.name}
-          name={pokemon.name}
-          imgSrc={pokemon.imgSrc}
-        />
-      </div>
-      {pokemonIndex > 0 && (
-        <button onClick={prevPokemon} className="prev">
-          precedent
-        </button>
-      )}
-
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={nextPokemon}>next</button>
-      )}
-    
-    </section>
+    <div>
+      <nav>
+        {pokemonList.map((pokemon, index) => (
+          <button key={pokemon.name} onClick={() => handlePokemonClick(index)}>
+            {pokemon.name}
+          </button>
+        ))}
+      </nav>
+      <PokemonCard
+        name={pokemonList[pokemonIndex].name}
+        imgSrc={pokemonList[pokemonIndex].imgSrc}
+      />
+    </div>
   );
 }
 

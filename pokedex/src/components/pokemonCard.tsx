@@ -4,7 +4,7 @@ interface pokemon{
   imgSrc ? : string;
 }
 
-export default function PokemonCard({name, imgSrc}:pokemon) {
+export default function PokemonCard({imgSrc, name}:pokemon) {
   return (
     <>
       <figure>
